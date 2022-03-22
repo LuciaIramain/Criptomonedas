@@ -34,9 +34,9 @@ const useCriptomoneda = (label, stateInicial, opciones) => {
                 value={state} //lo uso para que se vaya cambiando si el usuario marca otra opción
             >
                 <option value="">-- Seleccione --</option>
-                {/* {opciones.map(opcion => (
-                    <option value={opcion.codigo} key={opcion.codigo}>{opcion.nombre}</option>
-                ))} */}
+                {opciones.map(opcion => (
+                    <option value={opcion.CoinInfo.name} key={opcion.CoinInfo.Id}>{opcion.CoinInfo.FullName}</option>
+                ))}
             </Select>
         </Fragment>
     )
