@@ -22,8 +22,16 @@ const Boton = styled.input`
 
 const Formulario = () => {
 
-    // Utilizar useMoneda, le puedo cambiar el nombre y funciona igual
-    const [ moneda, SelectMonedas, actualizarState ] = useMoneda();
+    const MONEDAS = [
+        {codigo: 'ARG', nombre: 'Peso Argentino'},
+        {codigo: 'USD', nombre: 'Dolar de Estados Unidos'},
+        {codigo: 'EUR', nombre: 'Euro'},
+        {codigo: 'GBP', nombre: 'Libra Esterlina'},
+        {codigo: 'MXN', nombre: 'Peso Mexicano'}
+    ]
+
+    // Utilizar useMoneda, le puedo cambiar el nombre y funciona igual, y no hace fakta utilizar todos
+    const [ moneda, SelectMonedas ] = useMoneda('Elige tu moneda', '', MONEDAS);
 
     return (
         <div>
