@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import useMoneda from '../hooks/useMoneda';
+import useCriptomoneda from '../hooks/useCriptomoneda';
 
 const Boton = styled.input`
     margin-top: 20px;
@@ -33,10 +34,14 @@ const Formulario = () => {
     // Utilizar useMoneda, le puedo cambiar el nombre y funciona igual, y no hace fakta utilizar todos
     const [ moneda, SelectMonedas ] = useMoneda('Elige tu moneda', '', MONEDAS);
 
+    // Utilizar useCriptomoneda
+    const [ criptomoneda, SelectCripto ] = useCriptomoneda('Elige tu criptomoneda', '');
+
     return (
         <div>
             <form>
                 <SelectMonedas />
+                <SelectCripto />
                 <Boton
                     type='submit'
                     value='calcular'
